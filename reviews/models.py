@@ -19,6 +19,7 @@ class Review(CommonModel):
     )
     # user -> review
     # user.review_set.all() -> user.reviews.all()
+    
     feed = models.ForeignKey(
         "feeds.Feed",
         on_delete=models.CASCADE, # 게시글 지워졌을 때 댓글 지워짐
