@@ -26,6 +26,7 @@ class FeedsDetailSerializer(ModelSerializer): # 일부 데이터 보여주는 Se
 class FeedDetailSerializer(ModelSerializer): 
     user = UserSerializer(read_only=True) 
     reviews = ReviewSerializer(many=True, read_only=True)
+    
     class Meta:
         model = Feed
         fields = "__all__"

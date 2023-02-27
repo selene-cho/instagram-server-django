@@ -21,7 +21,6 @@ class Feed(CommonModel):
         on_delete=models.CASCADE, # 유저삭제시 CASCADE: 게시글삭제
         related_name="feeds" # revers accesor에서 불러올 이름(users.feed_set.all() = users.feeds.all(): 유저가 본인이 작성한 게시물 모두 가져올 때 원래 왼쪽처럼 작성하는 것을 feeds로 바꿔서 오른쪽 처럼 불러올 수 있게함)
     )
-    
 
     def __str__(self) -> str: # admin 페이지에서 문자열 caption으로 보이게
         return self.caption

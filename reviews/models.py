@@ -12,6 +12,7 @@ class Review(CommonModel):
     caption = models.CharField(max_length=150, default="")
     likesNum = models.PositiveIntegerField(default=0)
     
+    # 1:N (User:Review), N이 ForeignKey를 갖음.
     user = models.ForeignKey(
         "users.User",
         on_delete=models.CASCADE,
@@ -20,6 +21,7 @@ class Review(CommonModel):
     # user -> review
     # user.review_set.all() -> user.reviews.all()
     
+    # 1:N (Feed:Review), N이 ForeignKey를 갖음.
     feed = models.ForeignKey(
         "feeds.Feed",
         on_delete=models.CASCADE, # 게시글 지워졌을 때 댓글 지워짐
