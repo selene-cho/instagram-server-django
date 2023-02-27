@@ -21,6 +21,7 @@ class UserFeedSerializer(ModelSerializer):
         fields = (
           "id",
           "username",
-          "email"
+          "profileImg",
+          "email",
         )
       
